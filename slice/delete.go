@@ -12,7 +12,7 @@ func Delete[Src any](src []Src, index int)([]Src, error){
 
 //删除符合一定条件的元素，即m()返回true的元素
 //在原数组上进行操作
-func DeleteIf[Src any](src []Src, m func(idx int, src Src) bool) []Src {
+func FilterSlice[Src any](src []Src, m func(idx int, src Src) bool) []Src {
 	//用于记录不进行删除的元素的副本的位置
 	empty := 0
 	for idx := range src {
